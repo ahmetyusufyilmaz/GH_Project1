@@ -1,0 +1,45 @@
+﻿@model List<GH_Project1.Models.Activity>
+
+
+
+<h3>Etkinlikler Listesi</h3>
+</br>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Etkinlik Adı</th>
+            <th>Tarih</th>
+            <th>Yer</th>
+            <th>Detaylar</th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Place)
+                </td>
+                <td>
+                    <a asp-action="Details" class="btn btn-outline-primary" asp-route-id="@item.Id">Detaylar</a>
+                   
+               </td>
+               <td>
+                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.Id">Sil</a>
+               </td>
+               
+
+            </tr>
+        }
+    </tbody>
+</table>

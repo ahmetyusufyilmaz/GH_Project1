@@ -1,0 +1,41 @@
+﻿@model List<GH_Project1.Models.ActivityParticipants>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Bir etkinliğe katılımcı ata</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Etkinlik</th>
+            <th>Katılan Kişi</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParticipantName)
+                </td>
+
+                <td>
+                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.Id">Sil</a>
+                </td>
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+

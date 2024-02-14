@@ -1,0 +1,43 @@
+﻿@model GH_Project1.Models.ActivityParticipants
+
+@{
+    ViewData["Title"] = "Katılımcı Ata";
+}
+<style>
+    .form-control {
+        width: 50%; 
+    }
+</style>
+<br />
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="ActivityId" class="control-label"><b>Etkinlik Adı</b></label>
+        <select asp-for="ActivityId" asp-items="@(new SelectList(ViewBag.Activities, "Id", "Title"))" class="form-control">
+            <option value="">-- Etkinlik Seçin --</option>
+        </select>
+        <span asp-validation-for="ActivityId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ParticipantId" class="control-label"><b>Katılımcı Adı</b></label>
+        <select asp-for="ParticipantId" asp-items="@(new SelectList(ViewBag.Participants, "Id", "FullName"))" class="form-control">
+            <option value="">-- Katılımcı Seçin --</option>
+        </select>
+        <span asp-validation-for="ParticipantId" class="text-danger"></span>
+    </div>
+
+
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+</form>
+<script>
+    $(function () {
+        $("#returnDate").datepicker({
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>

@@ -1,0 +1,51 @@
+﻿
+
+@{
+    ViewData["Title"] = "Create";
+}
+@model GH_Project1.Models.Activity
+
+<style>
+    .form-control {
+        width: 50%; 
+    }
+</style>
+<h4>Yeni Etkinlik Oluştur</h4>
+<br />
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label">Etkinlik Adı</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Açıklama</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Date" class="control-label">Tarih</label>
+        <input asp-for="Date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Place" class="control-label">Yer</label>
+        <input asp-for="Place" class="form-control" />
+        <span asp-validation-for="Place" class="text-danger"></span>
+    </div>
+
+   
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-success" />
+    </div>
+</form>
+<br />
+<div>
+    <a class="btn btn-primary" asp-action="Index">Listeye dön</a>
+</div>
+
+

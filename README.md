@@ -1,4 +1,7 @@
-# GH_Project1
+Etkinlik Yönetimi Uygulaması
+
+Etkinlikler ve Katılımcıların ayrı ayrı listelenebildiği,yeni etkinlik ve yeni kişi oluşturulabile, mevcut etkinliğe katılımcı atanabilen, 
+Etkinlik detaylarında etkinliğe katılan katılımcıların listesinin görüntülenebildiği uygulamadır.
 
 
 
